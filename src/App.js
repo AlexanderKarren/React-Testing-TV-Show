@@ -15,12 +15,10 @@ export default function App() {
   const [seasons, setSeasons] = useState([]);
   const [selectedSeason, setSelectedSeason] = useState("");
   const episodes = seasons[selectedSeason] || [];
-  const {push} = useHistory();
 
   useEffect(() => {
     fetchShow()
     .then(response => {
-      console.log(response);
       setShow(response);
       setSeasons(formatSeasons(response._embedded.episodes));
     })
@@ -28,7 +26,6 @@ export default function App() {
 
   const handleSelect = e => {
     setSelectedSeason(e.value);
-    push("/");
   };
 
   if (!show) {

@@ -8,6 +8,7 @@ export const fetchShow = () => {
       .then(res => {
         // setShow(res.data);
         // setSeasons(formatSeasons(res.data._embedded.episodes));
+        console.log(res.data);
         return(res.data);
       });
   };
