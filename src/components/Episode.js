@@ -8,6 +8,7 @@ const Episode = ({seasons}) => {
     const {episodeID} = useParams();
 
     useEffect(() => {
+        console.log(seasons);
         Object.values(seasons).forEach(season => {
             season.forEach(episode => {
                 if (episodeID === episode.id.toString()) {
