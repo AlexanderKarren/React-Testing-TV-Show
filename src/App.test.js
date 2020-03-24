@@ -613,7 +613,20 @@ test("Component renders", async () => {
 
 test("Component rendering main component after loading data", async () => {
     mockFetchShow.mockResolvedValueOnce(mockShowData);
-    const { queryByText, getByText, queryAllByRole } = render(<App />, { wrapper: MemoryRouter });
+    const { queryByText } = render(<App />, { wrapper: MemoryRouter });
 
     await waitFor(() => expect(queryByText(/stranger things/i)).toBeInTheDocument);
+})
+
+test("Component renders all episodes after clicking on a season", async () => {
+  mockFetchShow.mockResolvedValueOnce(mockShowData);
+  const { queryByText, queryAllByText } = render(<App />, { wrapper: MemoryRouter });
+
+  await waitFor(() => expect(queryByText(/select a season/i)).toBeInTheDocument);
+  fireEvent.mouseDown(queryByText(/select a season/i));
+
+  await waitFor(() => expect(queryByText(/season 1/i)).toBeTruthy);
+  fireEvent.click(queryByText(/season 1/i));
+
+  await waitFor(() => expect(queryAllByText(/chapter/i)).toHaveLength(8));
 })

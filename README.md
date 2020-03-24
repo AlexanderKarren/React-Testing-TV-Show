@@ -70,8 +70,8 @@ useEffect(() => {
 
 ### Stretch goals
 
-- There is an utility function in this project that contains an isolated pure function. Look up how to do `unit tests` with Jest and test that function.
+- [ ] There is an utility function in this project that contains an isolated pure function. Look up how to do `unit tests` with Jest and test that function.
 
-- Look up the `TVMaze` API. Add a dropdown with the titles of some other popular shows. Add the user sequence of choosing a different show to fetch data for different shows.
+- [ ] Look up the `TVMaze` API. Add a dropdown with the titles of some other popular shows. Add the user sequence of choosing a different show to fetch data for different shows.
 
-- Add React Router, and add the functionality to click an episode and navigate to an episode page.
+- [x] Add React Router, and add the functionality to click an episode and navigate to an episode page.
